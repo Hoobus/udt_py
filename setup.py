@@ -7,12 +7,12 @@ module = Extension(
     '_udt',
     sources=['udt_py.cxx'],
     include_dirs=[".", os.path.abspath(os.path.join(dir_file,
-                                                    '..', 'udt4/src'))],
+                                                    '..', 'udt4/src')), os.path.abspath(os.path.join(os.path.sep, 'usr', 'include', 'udt'))],
     libraries=['udt'],
     library_dirs=[os.path.abspath(os.path.join(dir_file,
-                                               '..', 'udt4/src'))],
+                                               '..', 'udt4/src')), os.path.abspath(os.path.join(os.path.sep, 'usr', 'include', 'udt'))],
     extra_link_args=['-Wl,-R' + os.path.abspath(os.path.join(dir_file,
-                                                '..', 'udt4/src')),
+                                                '..', 'udt4/src')), os.path.abspath(os.path.join(os.path.sep, 'usr', 'include', 'udt')), 
                      '-lresolv']
 )
 
